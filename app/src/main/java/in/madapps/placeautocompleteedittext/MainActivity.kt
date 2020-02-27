@@ -31,7 +31,7 @@ import kotlinx.android.synthetic.main.activity_main.zipCodeTextView
 class MainActivity : AppCompatActivity() {
 
   val placesApi = PlaceAPI.Builder()
-    .apiKey("YOUR_API_KEY")
+    .apiKey("AIzaSyBhG4rSGB8uSJlrF7XnSOnqTsxtHw-xGZg")
     .build(this@MainActivity)
 
   var street = ""
@@ -77,11 +77,6 @@ class MainActivity : AppCompatActivity() {
       latitudeTextView.text = placeDetails.lat.toString()
       longitudeTextView.text = placeDetails.lng.toString()
       placeIdTextView.text = placeDetails.placeId
-      urlTextView.text = placeDetails.url
-      utcOffsetTextView.text = placeDetails.utcOffset.toString()
-      vicinityTextView.text = placeDetails.vicinity
-      compoundCodeTextView.text = placeDetails.compoundPlusCode
-      globalCodeTextView.text = placeDetails.globalPlusCode
     }
   }
 

@@ -165,18 +165,16 @@ class PlaceAPI private constructor(
     val lat = location.getDouble(LAT)
     val lng = location.getDouble(LNG)
     val placeId = resultJsonObject.getString(PLACE_ID)
-    val url = resultJsonObject.getString(URL)
-    val utcOffset = resultJsonObject.getInt(UTC_OFFSET)
-    val vicinity = resultJsonObject.getString(VICINITY)
-    val plusCode = resultJsonObject.getJSONObject(PLUS_CODE)
-    val compoundPlusCode = plusCode.getString(COMPOUND_CODE)
-    val globalPlusCode = plusCode.getString(GLOBAL_CODE)
     val address = ArrayList<Address>()
     getAddress(addressArray, address)
     listener.onPlaceDetailsFetched(
       PlaceDetails(
-        resultJsonObject.getString(ID), resultJsonObject.getString(NAME), address, lat,
-        lng, placeId, url, utcOffset, vicinity, compoundPlusCode, globalPlusCode
+        resultJsonObject.getString(ID),
+        resultJsonObject.getString(NAME),
+        address,
+        lat,
+        lng,
+        placeId
       )
     )
   }
